@@ -1,0 +1,13 @@
+@(form: Form[dtos.UserData])(implicit request: Http.Request, messages: play.i18n.Messages)
+
+@layout("Create User") {
+    @helper.form(action = routes.UserController.save()) {
+        @helper.CSRF.formField
+        @helper.inputText(form("id"))
+        @helper.inputText(form("firstName"))
+        @helper.inputText(form("lastName"))
+        @helper.inputText(form("age"))
+
+        <button type="submit">Create</button>
+    }
+}

@@ -1,0 +1,8 @@
+@(user: User)
+
+@layout("User " + user.id) {
+    <p>@user.firstName @user.lastName</p>
+    <p>@user.age</p>
+    <a href="@routes.UserController.edit(user.id)">Edit</a>
+    <a href="@routes.UserController.destroy(user.id)">Delete</a>
+}

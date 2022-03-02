@@ -1,0 +1,9 @@
+@(users: java.util.Set[User])
+
+@layout("All Users") {
+    @for(user <- users) {
+        <a href="@routes.UserController.show(user.id)">UserID: @user.id</a>
+        <p>User Name: @user.firstName @user.lastName</p>
+        <p>Age: @user.age</p>
+    }
+}

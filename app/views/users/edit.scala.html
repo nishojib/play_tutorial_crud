@@ -1,0 +1,10 @@
+@(id: Integer, form: Form[dtos.EditUserData])(implicit request: Http.Request, messages: play.i18n.Messages)
+
+@layout("Edit User") {
+    @helper.form(action = routes.UserController.update(id)) {
+        @helper.CSRF.formField
+        @helper.inputText(form("firstName"))
+
+        <button type="submit">Edit</button>
+    }
+}
