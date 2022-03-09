@@ -64,6 +64,7 @@ public class UserController extends Controller {
         Form<EditUserData> userForm = this.editForm.bindFromRequest(request);
         EditUserData userData = userForm.get();
 
+        // Doing a database call... Takes 10s
         User oldUser = User.findById(id);
 
         if (oldUser == null) {
